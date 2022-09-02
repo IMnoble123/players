@@ -10,6 +10,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var daysInWeek = [
+      "Today",
+      'Fri',
+      'Sat',
+      'Sun',
+      'Mon',
+      'Tue',
+      'wed',
+    ];
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -69,20 +78,29 @@ class HomePage extends StatelessWidget {
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.15,
                                 decoration: BoxDecoration(
-                                    color:
-                                        const Color.fromARGB(255, 37, 37, 36),
+                                    color: index == 0
+                                        ? Colors.green
+                                        : const Color.fromARGB(255, 37, 37, 36),
                                     borderRadius: BorderRadius.circular(20)),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
+                                  children: [
                                     Text(
-                                      '1',
+                                      '${index + 1}',
                                       style: TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                          color: index == 0
+                                              ? Colors.black
+                                              : Colors.white),
                                     ),
-                                    Text('data')
+                                    Text(
+                                      daysInWeek[index],
+                                      style: TextStyle(
+                                          color: index == 0
+                                              ? Colors.black
+                                              : Colors.white),
+                                    )
                                   ],
                                 ),
                               ),

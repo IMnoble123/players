@@ -7,7 +7,7 @@ class CricketPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Column(
+    return ListView(
       children: [
         Container(
             decoration: const BoxDecoration(
@@ -39,11 +39,12 @@ class CricketPage extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(
-            child: ListView.builder(
+        ListView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => const CricketTile(),
           itemCount: 10,
-        ))
+        )
       ],
     );
   }

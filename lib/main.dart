@@ -35,7 +35,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: Bottomnavigationbarpae()
+      home: const Bottomnavigationbarpae()
     );
   }
 }
