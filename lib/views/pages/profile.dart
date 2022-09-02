@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:player/views/pages/nav_bar.dart';
 import '../../auth/controller/authencation_controller.dart';
 
 class ProfilePage extends ConsumerWidget {
@@ -20,7 +20,15 @@ class ProfilePage extends ConsumerWidget {
             Text("user id: ${authUser.id}"),
             Text("user email: ${authUser.email}"),
             Text("email verified: ${authUser.emailVerified}"),
-
+            const SizedBox(
+              height: 30,
+            ),
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (ctx) => const Bottomnavigationbarpae()));
+                },
+                child: const Text("Go to homepage")),
             TextButton(
               child: const Text("SignOut"),
               onPressed: () {
